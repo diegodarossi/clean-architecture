@@ -611,16 +611,16 @@ export class PaginatedListOfTodoItemBriefDto implements IPaginatedListOfTodoItem
 
     init(_data?: any) {
         if (_data) {
-            if (Array.isArray(_data["items"])) {
+            if (Array.isArray(_data["Items"])) {
                 this.items = [] as any;
-                for (let item of _data["items"])
+                for (let item of _data["Items"])
                     this.items!.push(TodoItemBriefDto.fromJS(item));
             }
-            this.pageNumber = _data["pageNumber"];
-            this.totalPages = _data["totalPages"];
-            this.totalCount = _data["totalCount"];
-            this.hasPreviousPage = _data["hasPreviousPage"];
-            this.hasNextPage = _data["hasNextPage"];
+            this.pageNumber = _data["PageNumber"];
+            this.totalPages = _data["TotalPages"];
+            this.totalCount = _data["TotalCount"];
+            this.hasPreviousPage = _data["HasPreviousPage"];
+            this.hasNextPage = _data["HasNextPage"];
         }
     }
 
@@ -634,15 +634,15 @@ export class PaginatedListOfTodoItemBriefDto implements IPaginatedListOfTodoItem
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         if (Array.isArray(this.items)) {
-            data["items"] = [];
+            data["Items"] = [];
             for (let item of this.items)
-                data["items"].push(item.toJSON());
+                data["Items"].push(item.toJSON());
         }
-        data["pageNumber"] = this.pageNumber;
-        data["totalPages"] = this.totalPages;
-        data["totalCount"] = this.totalCount;
-        data["hasPreviousPage"] = this.hasPreviousPage;
-        data["hasNextPage"] = this.hasNextPage;
+        data["PageNumber"] = this.pageNumber;
+        data["TotalPages"] = this.totalPages;
+        data["TotalCount"] = this.totalCount;
+        data["HasPreviousPage"] = this.hasPreviousPage;
+        data["HasNextPage"] = this.hasNextPage;
         return data;
     }
 }
@@ -673,10 +673,10 @@ export class TodoItemBriefDto implements ITodoItemBriefDto {
 
     init(_data?: any) {
         if (_data) {
-            this.id = _data["id"];
-            this.listId = _data["listId"];
-            this.title = _data["title"];
-            this.done = _data["done"];
+            this.id = _data["Id"];
+            this.listId = _data["ListId"];
+            this.title = _data["Title"];
+            this.done = _data["Done"];
         }
     }
 
@@ -689,10 +689,10 @@ export class TodoItemBriefDto implements ITodoItemBriefDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["id"] = this.id;
-        data["listId"] = this.listId;
-        data["title"] = this.title;
-        data["done"] = this.done;
+        data["Id"] = this.id;
+        data["ListId"] = this.listId;
+        data["Title"] = this.title;
+        data["Done"] = this.done;
         return data;
     }
 }
@@ -719,8 +719,8 @@ export class CreateTodoItemCommand implements ICreateTodoItemCommand {
 
     init(_data?: any) {
         if (_data) {
-            this.listId = _data["listId"];
-            this.title = _data["title"];
+            this.listId = _data["ListId"];
+            this.title = _data["Title"];
         }
     }
 
@@ -733,8 +733,8 @@ export class CreateTodoItemCommand implements ICreateTodoItemCommand {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["listId"] = this.listId;
-        data["title"] = this.title;
+        data["ListId"] = this.listId;
+        data["Title"] = this.title;
         return data;
     }
 }
@@ -760,9 +760,9 @@ export class UpdateTodoItemCommand implements IUpdateTodoItemCommand {
 
     init(_data?: any) {
         if (_data) {
-            this.id = _data["id"];
-            this.title = _data["title"];
-            this.done = _data["done"];
+            this.id = _data["Id"];
+            this.title = _data["Title"];
+            this.done = _data["Done"];
         }
     }
 
@@ -775,9 +775,9 @@ export class UpdateTodoItemCommand implements IUpdateTodoItemCommand {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["id"] = this.id;
-        data["title"] = this.title;
-        data["done"] = this.done;
+        data["Id"] = this.id;
+        data["Title"] = this.title;
+        data["Done"] = this.done;
         return data;
     }
 }
@@ -805,10 +805,10 @@ export class UpdateTodoItemDetailCommand implements IUpdateTodoItemDetailCommand
 
     init(_data?: any) {
         if (_data) {
-            this.id = _data["id"];
-            this.listId = _data["listId"];
-            this.priority = _data["priority"];
-            this.note = _data["note"];
+            this.id = _data["Id"];
+            this.listId = _data["ListId"];
+            this.priority = _data["Priority"];
+            this.note = _data["Note"];
         }
     }
 
@@ -821,10 +821,10 @@ export class UpdateTodoItemDetailCommand implements IUpdateTodoItemDetailCommand
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["id"] = this.id;
-        data["listId"] = this.listId;
-        data["priority"] = this.priority;
-        data["note"] = this.note;
+        data["Id"] = this.id;
+        data["ListId"] = this.listId;
+        data["Priority"] = this.priority;
+        data["Note"] = this.note;
         return data;
     }
 }
@@ -858,14 +858,14 @@ export class TodosVm implements ITodosVm {
 
     init(_data?: any) {
         if (_data) {
-            if (Array.isArray(_data["priorityLevels"])) {
+            if (Array.isArray(_data["PriorityLevels"])) {
                 this.priorityLevels = [] as any;
-                for (let item of _data["priorityLevels"])
+                for (let item of _data["PriorityLevels"])
                     this.priorityLevels!.push(LookupDto.fromJS(item));
             }
-            if (Array.isArray(_data["lists"])) {
+            if (Array.isArray(_data["Lists"])) {
                 this.lists = [] as any;
-                for (let item of _data["lists"])
+                for (let item of _data["Lists"])
                     this.lists!.push(TodoListDto.fromJS(item));
             }
         }
@@ -881,14 +881,14 @@ export class TodosVm implements ITodosVm {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         if (Array.isArray(this.priorityLevels)) {
-            data["priorityLevels"] = [];
+            data["PriorityLevels"] = [];
             for (let item of this.priorityLevels)
-                data["priorityLevels"].push(item.toJSON());
+                data["PriorityLevels"].push(item.toJSON());
         }
         if (Array.isArray(this.lists)) {
-            data["lists"] = [];
+            data["Lists"] = [];
             for (let item of this.lists)
-                data["lists"].push(item.toJSON());
+                data["Lists"].push(item.toJSON());
         }
         return data;
     }
@@ -914,8 +914,8 @@ export class LookupDto implements ILookupDto {
 
     init(_data?: any) {
         if (_data) {
-            this.id = _data["id"];
-            this.title = _data["title"];
+            this.id = _data["Id"];
+            this.title = _data["Title"];
         }
     }
 
@@ -928,8 +928,8 @@ export class LookupDto implements ILookupDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["id"] = this.id;
-        data["title"] = this.title;
+        data["Id"] = this.id;
+        data["Title"] = this.title;
         return data;
     }
 }
@@ -956,12 +956,12 @@ export class TodoListDto implements ITodoListDto {
 
     init(_data?: any) {
         if (_data) {
-            this.id = _data["id"];
-            this.title = _data["title"];
-            this.colour = _data["colour"];
-            if (Array.isArray(_data["items"])) {
+            this.id = _data["Id"];
+            this.title = _data["Title"];
+            this.colour = _data["Colour"];
+            if (Array.isArray(_data["Items"])) {
                 this.items = [] as any;
-                for (let item of _data["items"])
+                for (let item of _data["Items"])
                     this.items!.push(TodoItemDto.fromJS(item));
             }
         }
@@ -976,13 +976,13 @@ export class TodoListDto implements ITodoListDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["id"] = this.id;
-        data["title"] = this.title;
-        data["colour"] = this.colour;
+        data["Id"] = this.id;
+        data["Title"] = this.title;
+        data["Colour"] = this.colour;
         if (Array.isArray(this.items)) {
-            data["items"] = [];
+            data["Items"] = [];
             for (let item of this.items)
-                data["items"].push(item.toJSON());
+                data["Items"].push(item.toJSON());
         }
         return data;
     }
@@ -1014,12 +1014,12 @@ export class TodoItemDto implements ITodoItemDto {
 
     init(_data?: any) {
         if (_data) {
-            this.id = _data["id"];
-            this.listId = _data["listId"];
-            this.title = _data["title"];
-            this.done = _data["done"];
-            this.priority = _data["priority"];
-            this.note = _data["note"];
+            this.id = _data["Id"];
+            this.listId = _data["ListId"];
+            this.title = _data["Title"];
+            this.done = _data["Done"];
+            this.priority = _data["Priority"];
+            this.note = _data["Note"];
         }
     }
 
@@ -1032,12 +1032,12 @@ export class TodoItemDto implements ITodoItemDto {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["id"] = this.id;
-        data["listId"] = this.listId;
-        data["title"] = this.title;
-        data["done"] = this.done;
-        data["priority"] = this.priority;
-        data["note"] = this.note;
+        data["Id"] = this.id;
+        data["ListId"] = this.listId;
+        data["Title"] = this.title;
+        data["Done"] = this.done;
+        data["Priority"] = this.priority;
+        data["Note"] = this.note;
         return data;
     }
 }
@@ -1065,7 +1065,7 @@ export class CreateTodoListCommand implements ICreateTodoListCommand {
 
     init(_data?: any) {
         if (_data) {
-            this.title = _data["title"];
+            this.title = _data["Title"];
         }
     }
 
@@ -1078,7 +1078,7 @@ export class CreateTodoListCommand implements ICreateTodoListCommand {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["title"] = this.title;
+        data["Title"] = this.title;
         return data;
     }
 }
@@ -1102,8 +1102,8 @@ export class UpdateTodoListCommand implements IUpdateTodoListCommand {
 
     init(_data?: any) {
         if (_data) {
-            this.id = _data["id"];
-            this.title = _data["title"];
+            this.id = _data["Id"];
+            this.title = _data["Title"];
         }
     }
 
@@ -1116,8 +1116,8 @@ export class UpdateTodoListCommand implements IUpdateTodoListCommand {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["id"] = this.id;
-        data["title"] = this.title;
+        data["Id"] = this.id;
+        data["Title"] = this.title;
         return data;
     }
 }
@@ -1144,10 +1144,10 @@ export class WeatherForecast implements IWeatherForecast {
 
     init(_data?: any) {
         if (_data) {
-            this.date = _data["date"] ? new Date(_data["date"].toString()) : <any>undefined;
-            this.temperatureC = _data["temperatureC"];
-            this.temperatureF = _data["temperatureF"];
-            this.summary = _data["summary"];
+            this.date = _data["Date"] ? new Date(_data["Date"].toString()) : <any>undefined;
+            this.temperatureC = _data["TemperatureC"];
+            this.temperatureF = _data["TemperatureF"];
+            this.summary = _data["Summary"];
         }
     }
 
@@ -1160,10 +1160,10 @@ export class WeatherForecast implements IWeatherForecast {
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["date"] = this.date ? this.date.toISOString() : <any>undefined;
-        data["temperatureC"] = this.temperatureC;
-        data["temperatureF"] = this.temperatureF;
-        data["summary"] = this.summary;
+        data["Date"] = this.date ? this.date.toISOString() : <any>undefined;
+        data["TemperatureC"] = this.temperatureC;
+        data["TemperatureF"] = this.temperatureF;
+        data["Summary"] = this.summary;
         return data;
     }
 }

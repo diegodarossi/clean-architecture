@@ -2,6 +2,9 @@
 using CleanArchitecture.Application.TodoLists.Commands.DeleteTodoList;
 using CleanArchitecture.Application.TodoLists.Commands.UpdateTodoList;
 using CleanArchitecture.Application.TodoLists.Queries.GetTodos;
+using Kendo.Mvc.Extensions;
+using Kendo.Mvc.UI;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CleanArchitecture.Web.Endpoints;
 
@@ -15,6 +18,14 @@ public class TodoLists : EndpointGroupBase
             .MapPost(CreateTodoList)
             .MapPut(UpdateTodoList, "{id}")
             .MapDelete(DeleteTodoList, "{id}");
+    }
+
+    public Task<TodosVm> GetTeste(ISender sender, [DataSourceRequest] DataSourceRequest request)
+    {
+        var teste = new string[] { "ddasd" };
+        teste.ToDataSourceResult(request);
+
+        return sender.Send(new GetTodosQuery());
     }
 
     public Task<TodosVm> GetTodoLists(ISender sender)

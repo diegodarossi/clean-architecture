@@ -327,28 +327,28 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "items": {
+          "Items": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/TodoItemBriefDto"
             }
           },
-          "pageNumber": {
+          "PageNumber": {
             "type": "integer",
             "format": "int32"
           },
-          "totalPages": {
+          "TotalPages": {
             "type": "integer",
             "format": "int32"
           },
-          "totalCount": {
+          "TotalCount": {
             "type": "integer",
             "format": "int32"
           },
-          "hasPreviousPage": {
+          "HasPreviousPage": {
             "type": "boolean"
           },
-          "hasNextPage": {
+          "HasNextPage": {
             "type": "boolean"
           }
         }
@@ -357,19 +357,19 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "id": {
+          "Id": {
             "type": "integer",
             "format": "int32"
           },
-          "listId": {
+          "ListId": {
             "type": "integer",
             "format": "int32"
           },
-          "title": {
+          "Title": {
             "type": "string",
             "nullable": true
           },
-          "done": {
+          "Done": {
             "type": "boolean"
           }
         }
@@ -378,11 +378,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "listId": {
+          "ListId": {
             "type": "integer",
             "format": "int32"
           },
-          "title": {
+          "Title": {
             "type": "string",
             "nullable": true
           }
@@ -392,15 +392,15 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "id": {
+          "Id": {
             "type": "integer",
             "format": "int32"
           },
-          "title": {
+          "Title": {
             "type": "string",
             "nullable": true
           },
-          "done": {
+          "Done": {
             "type": "boolean"
           }
         }
@@ -409,18 +409,18 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "id": {
+          "Id": {
             "type": "integer",
             "format": "int32"
           },
-          "listId": {
+          "ListId": {
             "type": "integer",
             "format": "int32"
           },
-          "priority": {
+          "Priority": {
             "$ref": "#/components/schemas/PriorityLevel"
           },
-          "note": {
+          "Note": {
             "type": "string",
             "nullable": true
           }
@@ -446,13 +446,13 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "priorityLevels": {
+          "PriorityLevels": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/LookupDto"
             }
           },
-          "lists": {
+          "Lists": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/TodoListDto"
@@ -464,11 +464,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "id": {
+          "Id": {
             "type": "integer",
             "format": "int32"
           },
-          "title": {
+          "Title": {
             "type": "string",
             "nullable": true
           }
@@ -478,19 +478,19 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "id": {
+          "Id": {
             "type": "integer",
             "format": "int32"
           },
-          "title": {
+          "Title": {
             "type": "string",
             "nullable": true
           },
-          "colour": {
+          "Colour": {
             "type": "string",
             "nullable": true
           },
-          "items": {
+          "Items": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/TodoItemDto"
@@ -502,26 +502,26 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "id": {
+          "Id": {
             "type": "integer",
             "format": "int32"
           },
-          "listId": {
+          "ListId": {
             "type": "integer",
             "format": "int32"
           },
-          "title": {
+          "Title": {
             "type": "string",
             "nullable": true
           },
-          "done": {
+          "Done": {
             "type": "boolean"
           },
-          "priority": {
+          "Priority": {
             "type": "integer",
             "format": "int32"
           },
-          "note": {
+          "Note": {
             "type": "string",
             "nullable": true
           }
@@ -531,7 +531,7 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "title": {
+          "Title": {
             "type": "string",
             "nullable": true
           }
@@ -541,11 +541,11 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "id": {
+          "Id": {
             "type": "integer",
             "format": "int32"
           },
-          "title": {
+          "Title": {
             "type": "string",
             "nullable": true
           }
@@ -555,19 +555,19 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "date": {
+          "Date": {
             "type": "string",
             "format": "date-time"
           },
-          "temperatureC": {
+          "TemperatureC": {
             "type": "integer",
             "format": "int32"
           },
-          "temperatureF": {
+          "TemperatureF": {
             "type": "integer",
             "format": "int32"
           },
-          "summary": {
+          "Summary": {
             "type": "string",
             "nullable": true
           }
